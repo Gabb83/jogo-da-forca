@@ -1,0 +1,124 @@
+import java.util.Scanner;
+
+public class Jogoforca {
+	
+	/*private String palavra;
+	private String linhaDaPalavra = "";
+
+	void Forca(String palavra) {
+		this.palavra = palavra;
+	}
+
+	public String desenhaLinhaForca() {
+		for(int i = 0; i < this.palavra.length(); i++){
+			linhaDaPalavra =  linhaDaPalavra +  "_ ";
+		}
+		return linhaDaPalavra;
+	}
+
+	public boolean advinhaLetra(String letra){
+		int contador = this.palavra.length();  
+		for (int i=0; i< contador; i++) {  
+			   //char c = this.palavra.charAt(i);
+			   if (this.palavra.substring(i,i+1).equalsIgnoreCase(letra)){
+				  System.out.print(letra); 
+			   }else{
+				   System.out.println("letra inválida");
+			   }
+			} 
+		return true;*/		
+	
+	
+	
+	/*private ArrayList<String> listaPalpites;
+	
+	private String[] bancoPalavras = { "flamengo", "vasco", "barcelona", "corinthians",
+				"internacional", "fluminense", "fortaleza", "ceara",
+				"ferroviario", "botafogo", "criciuma", "icasa", "sport",
+				"gremio", "cruzeiro", "palmeiras", "santos", "avai", "goias",
+				"coritiba", "figueirense", "bahia", "nautico", "parana", "abc",
+				"bragantino", "sevilla", "oeste", "macae", "tolima" };
+
+	
+	public String palavraAlearotia() {
+		int r = (int) (Math.random() * bancoPalavras.length);
+		String random = this.bancoPalavras[r];
+		return random;}*/
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner entrada = new Scanner(System.in);
+		System.out.print("Este é o jogo da forca! \n");
+		System.out.println("para começar digite seu nome");
+		String nome = entrada.next();
+		System.out.println(" Vamos começar! " + nome);
+		
+		/*Forca jogo = new Forca("BOI");
+		System.out.println(jogo.desenhaLinhaForca());
+
+		Scanner entrada = new Scanner(System.in);
+		System.out.print("Digite uma palavra: ");
+		String nome = entrada.nextLine();
+		jogo.advinhaLetra(nome);*/
+		
+		String palavra[] = { "v", "a", "s", "c", "o"};  
+		  
+		Scanner sc = new Scanner(System.in);  
+		  
+		int forca = 1, vencer = 0, perder = 0, contador = 0, chancesDificil = 10;  
+
+		String digito, letrasDigitadas[] = new String[20];  
+		  
+		while (forca == 1) {  
+		    int existePalavra = 0;  
+		    System.out.println("Digite uma letra:");  
+		    digito = sc.next();  
+		    letrasDigitadas[contador] = digito;  
+		  
+		    /** verificar se a letra já foi digitada. */  
+		    for (int i = 0; i < letrasDigitadas.length; i++) {  
+		        if (letrasDigitadas[i] != null) {  
+		            if (letrasDigitadas[i].equals(digito)) {  
+		                existePalavra++;  
+		            }  
+		        }  
+		    }  
+		    /**Se a letra não foi digitada ainda verifica se está correta, caso contrario exibe a mensagem */  
+		    if (!(existePalavra > 1)) {  
+		        /**Faz o loop no array da palavra, que não estava sendo feito */  
+		        for (int x = 0; x < palavra.length; x++) {  
+		            /**Verifica se a letra está correta */  
+		            if (palavra[x].equals(digito)) {  
+		                System.out.println("Parabens você acertou uma letra." );  
+		                vencer++;  
+		                break;  
+		            } else {  
+		                if (x == 2) {  
+		                    System.out.println("Infelismente você errou.");  
+		                    perder++;
+		                    System.out.println("Você tem apenas: " + (chancesDificil - perder) +  " chanses");
+		                }  
+		            }  
+		        }  
+		        if (perder == chancesDificil) {  
+		            System.out.println("Você perdeu, tente novamente!");  
+		            System.exit(0);  
+		        } else if (vencer == 5) {  
+		            System.out.println(" parabéns"+nome+ " você venceu");  
+		            System.exit(0);  
+		        
+		        }  
+		    } else {  
+		        System.out.println("Essa letra já foi digitada.");  
+		    }  
+		    contador++;  
+		}  
+
+		
+		
+
+	}
+	}
+
